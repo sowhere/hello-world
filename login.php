@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>SHARING DATA JARAK JAUH XDATA</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -20,19 +20,30 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+        <link rel="icon" href="/images/logo2.png" type="image/icon type">
 </head>
 <body>
 	
+<?php
+    /* handle error */
+    if (isset($_GET['error'])) : ?>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>Warning!</strong> <?=base64_decode($_GET['error']);?>
+        </div>
+<?php endif;?>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/img-01.png" alt="IMG">
 				</div>
 
+				<form action="check-login.php" class="inner-login" method="post">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Member Login
+					Root user sign in
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -62,13 +73,13 @@
 							Forgot
 						</span>
 						<a class="txt2" href="#">
-							Username / Password?
+							Your Password?
 						</a>
 					</div>
 
 					<div class="text-center p-t-136">
 						<a class="txt2" href="#">
-							Create your Account
+							Xdata uses information from your account to identify you and allow access to Xdata Cloud. Your use of this site is governed by our Terms of Use and Privacy Policy linked below. Your use of Xdata products and services is governed by the Xdata Customer Agreement linked Here.
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
